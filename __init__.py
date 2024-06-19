@@ -35,9 +35,9 @@ def do_install():
 #     print(f"### CompfyUI-Impact-Pack: corrupted subpack detected.")
     # shutil.rmtree(subpack_path)
 
-# if impact.config.get_config()['dependency_version'] < impact.config.dependency_version or not os.path.exists(subpack_path):
-#     print(f"### ComfyUI-Impact-Pack: Updating dependencies [{impact.config.get_config()['dependency_version']} -> {impact.config.dependency_version}]")
-#     do_install()
+if impact.config.get_config()['dependency_version'] < impact.config.dependency_version or not os.path.exists(subpack_path):
+    print(f"### ComfyUI-Impact-Pack: Updating dependencies [{impact.config.get_config()['dependency_version']} -> {impact.config.dependency_version}]")
+    do_install()
 
 sys.path.append(subpack_path)
 
